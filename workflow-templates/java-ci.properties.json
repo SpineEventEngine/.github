@@ -1,0 +1,12 @@
+{
+    "name": "Java CI",
+    "description": "Java CI workflow template.",
+    "iconName": "spine-logo-sign",
+    "categories": [
+        "Java"
+    ],
+    "filePatterns": [
+        "gradlew",
+        "gradlew.bat"
+    ]
+}
