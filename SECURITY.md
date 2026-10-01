@@ -44,4 +44,22 @@ Spine incorporates third-party components and other dependencies. Where a vulner
 such a component affects Spine, we treat it as an issue affecting our product and address it
 accordingly. Please see the [Policy][cvd-policy] for the details.
 
-[cvd-policy]: https://spine.io/cvd-policy/
+Verifying our artifacts
+-----------------------
+The artifacts we publish to Maven repositories carry signed build provenance: a record, in
+the [SLSA][slsa] format, of the repository, branch, and workflow that built them. This
+covers JARs, POMs, Gradle module metadata, and the SBOM published next to each module. The
+builds run on GitHub-hosted runners, in a reusable workflow that the building repository
+cannot modify, which meets SLSA v1.0 Build Level 3.
+
+With the provenance, you can check that a file you downloaded was built by us from a
+protected branch and has not changed since. It does not say that the artifact is free of
+vulnerabilities; to report a vulnerability, please follow the instructions above.
+
+Artifacts published before a repository adopted this process carry no provenance, or
+provenance at a lower level. See [Verifying artifacts][verify] for the command and the
+versions it applies to.
+
+[cvd-policy]: https://spine.io/docs/security/cvd-policy/
+[slsa]: https://slsa.dev/spec/v1.0/levels
+[verify]: https://spine.io/docs/security/verifying-artifacts/
